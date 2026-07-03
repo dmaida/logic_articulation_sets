@@ -70,10 +70,44 @@ def mode_for(name):
 # prefix -> { instrument display name : [slot1, slot2, ... up to 8] }
 LIBRARIES = {
     "NI - SE - Brass Solo - ": {
-        inst: ["Sustain p", "Sustain f", "Sustain fp", "Marcato",
-               "Staccato", "Sforzando", "Swell", "Trill"]
-        for inst in ["Trumpet", "Horn 1", "Horn 2", "Trombone", "Tuba",
-                     "Brass Quartet"]
+        # all verified from Kontakt (keyswitches from C0; Quartet uses only 6):
+        "Brass Quartet": ["Sustain p", "Sustain f", "Staccato p",
+                          "Staccato F", "Sforzando Fast", "Sforzando Slow"],
+        "Horn 1": ["Sustain p", "Sustain f", "Staccato Velocity",
+                   "Staccato Triple Tongue", "Staccato Tongue Stop",
+                   "Sforzando Fast", "Swell Fast", "Blast FFF"],
+        "Horn 2": ["Sustain p", "Sustain f", "Staccato Velocity",
+                   "Staccato Dbl. Tongue", "Bend Stopped", "Sforzando Fast",
+                   "Swell Fast", "Blast Short FFF"],
+        # verified from Kontakt (keyswitches C0-G0):
+        "Trumpet": ["Sustain p", "Sustain f", "Staccato Velocity",
+                    "Staccato Triple Tongue", "Sustain Str. Mute",
+                    "Sforzando Mute", "Swell Medium", "Staccato Velocity"],
+        "Trombone": ["Sustain p", "Sustain f", "Staccato Velocity",
+                     "Staccato Triple Tongue", "Staccato FFF",
+                     "Sforzando Fast", "Swell Fast", "Tongue Stop"],
+        "Tuba": ["Sustain p", "Sustain f", "Staccato Velocity",
+                 "Staccato Dbl. Tongue", "Crescendo", "Sforzando Fast",
+                 "Swell Fast", "Staccato Tongue Stop"],
+    },
+    "NI - SE - Brass Ensemble - ": {
+        # all verified from Kontakt (keyswitches C0-G0):
+        "Brass Ensemble": ["Sustain", "Staccato", "Decrescendo", "Sforzando",
+                           "Crescendo", "Swell", "Blast FFF",
+                           "Staccato Velocity"],
+        "Horns": ["Sustain All", "Sustain Single Tongue", "Trill Semi-Tone",
+                  "Staccato", "Staccato Stop Mute", "Sforzando", "Swell",
+                  "Blast FFF"],
+        "Trumpets": ["Sustain All", "Sustain Double Tongue", "Trill Semi-Tone",
+                     "Staccato", "Staccato Triple Tongue", "Sforzando",
+                     "Swell", "Blast FFF"],
+        "Tubas": ["Sustain All", "Sustain Decrescendo", "Sustain Trill",
+                  "Staccato", "Blast Short FFF", "Sforzando", "Swell Fast",
+                  "Blast Long FFF"],
+        "Trombones": ["Sustain All", "Sustain Str. Mute",
+                      "Sustain Trill Tongued", "Staccato",
+                      "Staccato Triple Tongue", "Sforzando", "Swell",
+                      "Blast FFF"],
     },
     "NI - SE - String Ensemble - ": {
         inst: ["Sustain", "Legato", "Spiccato", "Staccato",

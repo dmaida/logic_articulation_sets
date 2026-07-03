@@ -46,7 +46,9 @@
 				<key>ID</key>
 				<integer>1003</integer>
 				<key>Name</key>
-				<string>Sustain fp</string>
+				<string>Staccato Velocity</string>
+				<key>Symbol</key>
+				<string>Staccato</string>
 				<key>Output</key>
 				<array>
 					<dict>
@@ -63,9 +65,9 @@
 				<key>ID</key>
 				<integer>1004</integer>
 				<key>Name</key>
-				<string>Marcato</string>
+				<string>Staccato Dbl. Tongue</string>
 				<key>Symbol</key>
-				<string>Marcato</string>
+				<string>Staccato</string>
 				<key>Output</key>
 				<array>
 					<dict>
@@ -82,9 +84,7 @@
 				<key>ID</key>
 				<integer>1005</integer>
 				<key>Name</key>
-				<string>Staccato</string>
-				<key>Symbol</key>
-				<string>Staccato</string>
+				<string>Crescendo</string>
 				<key>Output</key>
 				<array>
 					<dict>
@@ -101,7 +101,7 @@
 				<key>ID</key>
 				<integer>1006</integer>
 				<key>Name</key>
-				<string>Sforzando</string>
+				<string>Sforzando Fast</string>
 				<key>Symbol</key>
 				<string>Marcatissimo</string>
 				<key>Output</key>
@@ -120,7 +120,7 @@
 				<key>ID</key>
 				<integer>1007</integer>
 				<key>Name</key>
-				<string>Swell</string>
+				<string>Swell Fast</string>
 				<key>Output</key>
 				<array>
 					<dict>
@@ -137,7 +137,9 @@
 				<key>ID</key>
 				<integer>1008</integer>
 				<key>Name</key>
-				<string>Trill</string>
+				<string>Staccato Tongue Stop</string>
+				<key>Symbol</key>
+				<string>Staccato</string>
 				<key>Output</key>
 				<array>
 					<dict>
