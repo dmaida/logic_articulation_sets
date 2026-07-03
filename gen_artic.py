@@ -135,9 +135,16 @@ LIBRARIES = {
     },
     # e-instruments Session Horns Pro (keyswitches at C-1, see BASE_BY_PREFIX).
     "Session Horns Pro - ": {
-        # verified from Kontakt (Trumpet 1 preset, keyswitches C-1 to G-1):
-        "Trumpet 1": ["Non Vibrato", "Vibrato", "FoPiCre 2Beat", "Grace",
-                      "Grace Vibrato", "Growl", "Staccato", "Rips"],
+        # shared default layout, verified from Kontakt (keyswitches C-1 to G-1).
+        **{inst: ["Non Vibrato", "Vibrato", "FoPiCre 2Beat", "Grace",
+                  "Grace Vibrato", "Growl", "Staccato", "Rips"]
+           for inst in ["Trumpet 1", "Trumpet 2", "Tuba", "Tenor Trombone",
+                        "Tenor Sax", "Mute Trumpet", "Flugelhorn",
+                        "Bass Trombone", "Alto Sax"]},
+        # Baritone Sax adds a 9th keyswitch at G#-1 (a 2nd Non Vibrato):
+        "Baritone Sax": ["Non Vibrato", "Vibrato", "FoPiCre 2Beat", "Grace",
+                         "Grace Vibrato", "Growl", "Staccato", "Rips",
+                         "Non Vibrato"],
     },
 }
 
