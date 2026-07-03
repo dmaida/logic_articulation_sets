@@ -35,6 +35,12 @@ BASE = 24                        # MIDI note of slot 1  (C0 in Logic; C3 = 60)
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sets")
 SWITCHING_ENABLED = True         # play/click a keyswitch to SELECT an articulation
 
+# Per-library override for the slot-1 keyswitch note (defaults to BASE = C0).
+# e-instruments Session Horns Pro puts its keyswitches at C-1 (MIDI 12).
+BASE_BY_PREFIX = {
+    "Session Horns Pro - ": 12,  # C-1
+}
+
 # --- notation symbols: only these strings are valid in Logic (from factory sets)
 SYMBOLS = {
     "staccato": "Staccato",
@@ -127,15 +133,21 @@ LIBRARIES = {
         for inst in ["Flute", "Oboe", "Clarinet", "Bassoon", "Contrabassoon",
                      "Saxophone", "Woodwind Quintet"]
     },
+    # e-instruments Session Horns Pro (keyswitches at C-1, see BASE_BY_PREFIX).
+    "Session Horns Pro - ": {
+        # verified from Kontakt (Trumpet 1 preset, keyswitches C-1 to G-1):
+        "Trumpet 1": ["Non Vibrato", "Vibrato", "FoPiCre 2Beat", "Grace",
+                      "Grace Vibrato", "Growl", "Staccato", "Rips"],
+    },
 }
 
 
-def build_plist(fname, artics):
+def build_plist(fname, artics, base=BASE):
     art_rows, sw_rows = [], []
     for i, name in enumerate(artics):
         aid = i + 1
         iid = 1000 + aid
-        note = BASE + i
+        note = base + i
         sym = symbol_for(name)
         sym_xml = (f"\n\t\t\t\t<key>Symbol</key>\n\t\t\t\t<string>{sym}</string>"
                    if sym else "")
@@ -196,13 +208,14 @@ def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     n = 0
     for prefix, insts in LIBRARIES.items():
+        base = BASE_BY_PREFIX.get(prefix, BASE)
         for inst, artics in insts.items():
             fname = f"{prefix}{inst}.plist"
             with open(os.path.join(OUT_DIR, fname), "w", encoding="utf-8") as fh:
-                fh.write(build_plist(fname, artics))
+                fh.write(build_plist(fname, artics, base))
             n += 1
             print(f"wrote {fname}  ({len(artics)} artics, notes "
-                  f"{BASE}-{BASE + len(artics) - 1})")
+                  f"{base}-{base + len(artics) - 1})")
     print(f"\n{n} files -> {OUT_DIR}")
 
 
