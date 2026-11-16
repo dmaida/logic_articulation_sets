@@ -37,10 +37,12 @@ SWITCHING_ENABLED = True         # play/click a keyswitch to SELECT an articulat
 
 # Per-library override for the slot-1 keyswitch note (defaults to BASE = C0).
 # e-instruments Session Horns Pro puts its keyswitches at C-1 (MIDI 12).
-# e-instruments Session Strings Pro 2 puts them at C-2 (MIDI 0).
+# e-instruments Session Strings Pro 2 also starts at C-1 (MIDI 12), verified
+# from the Key Switch panel of Violins - Modern (the manual's screenshot is
+# stale: it shows C-2 and omits the Legato slot).
 BASE_BY_PREFIX = {
     "Session Horns Pro - ": 12,          # C-1
-    "Session Strings Pro 2 - ": 0,       # C-2
+    "Session Strings Pro 2 - ": 12,      # C-1
 }
 
 # --- notation symbols: only these strings are valid in Logic (from factory sets)
@@ -148,14 +150,14 @@ LIBRARIES = {
                          "Grace Vibrato", "Growl", "Staccato", "Rips",
                          "Non Vibrato"],
     },
-    # e-instruments Session Strings Pro 2 (keyswitches at C-2, see BASE_BY_PREFIX).
-    # The library exposes NINE keyswitch slots in a 3x3 grid. Slot keys are
-    # user-assignable; the manual's screenshot (p.19) shows the first row filled:
-    #   C-2 Sustain | C#-2 Staccato | D-2 Pizzicato
-    # Slots 4-9 (D-2 ... G#-2) are assigned per nki and vary; add them here once
-    # read off the Key Switch panel in Kontakt.
+    # e-instruments Session Strings Pro 2 (keyswitches at C-1, see BASE_BY_PREFIX).
+    # Nine keyswitch slots in a 3x3 grid, keys user-assignable per nki.
+    # Verified from Kontakt (Violins - Modern, Key Switch panel):
+    #   C-1 Sustain | C#-1 Staccato | D-1 Pizzicato | D#-1 Legato
+    # Slots 5-9 (E-1 ... G#-1) are empty in that nki. Layout for the other
+    # instruments (Violas/Celli/Basses/Ensemble) is assumed to match - verify.
     "Session Strings Pro 2 - ": {
-        inst: ["Sustain", "Staccato", "Pizzicato"]
+        inst: ["Sustain", "Staccato", "Pizzicato", "Legato"]
         for inst in ["Violins", "Violas", "Celli", "Basses", "Ensemble"]
     },
 }

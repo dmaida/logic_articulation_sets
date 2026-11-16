@@ -116,6 +116,16 @@ Flugelhorn, Bass Trombone, Alto Sax.
 Exception — **Baritone Sax**: same 8 + a 9th keyswitch at G#-1 = `Non Vibrato`
 (redundant duplicate of slot 1; 9 slots, C-1→G#-1).
 
+**e-instruments — Session Strings Pro 2** (base C-1 / MIDI 12)
+
+Verified from Kontakt for **Violins - Modern** (Key Switch panel, 3x3 grid):
+`C-1 Sustain · C#-1 Staccato · D-1 Pizzicato · D#-1 Legato` — slots 5–9
+(E-1 … G#-1) empty. Violas / Celli / Basses / Ensemble are generated with the
+same layout but are **not yet confirmed**; if one differs, give it its own list.
+
+Note: the manual (p.19) shows `C-2` and only three slots — that screenshot is
+stale; the shipping instrument starts at C-1 and includes Legato.
+
 ### ⏳ Not yet verified (still on placeholder default names)
 
 - **NI SE — String Ensemble** (base C0): Violins 1, Violins 2, Violas, Cellos,
@@ -127,12 +137,6 @@ Exception — **Baritone Sax**: same 8 + a 9th keyswitch at G#-1 = `Non Vibrato`
 - **NI SE — Woodwind Solo** (base C0): Flute, Oboe, Clarinet, Bassoon,
   Contrabassoon, Saxophone, Woodwind Quintet
   — placeholder: Sustain · Sustain Vibrato · Legato · Staccato · Sforzando · Swell · Trill · Marcato
-- **e-instruments — Session Strings Pro 2** (base C-2 / MIDI 0): Violins, Violas,
-  Celli, Basses, Ensemble — only the three slots the manual documents are set
-  (C-2 Sustain · C#-2 Staccato · D-2 Pizzicato). The library has **nine**
-  keyswitch slots in a 3x3 grid and their contents/keys are user-assignable per
-  nki, so the remaining six must be read off the Key Switch panel in Kontakt
-  before they can be added.
 
 To verify: open each `.nki` in Kontakt, read the Articulation Slots menu
 top-to-bottom, edit the matching list in `LIBRARIES`, rerun `gen_artic.py`.
