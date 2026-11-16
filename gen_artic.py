@@ -53,6 +53,7 @@ SYMBOLS = {
     "marcato": "Marcato",
     "sforzando": "Marcatissimo",
     "sforzato": "Marcatissimo",
+    "forte piano": "Marcatissimo",
     "pizzicato": "Pizzicato",
     "pizz": "Pizzicato",
     "fall": "Fall Short",
@@ -152,12 +153,13 @@ LIBRARIES = {
     },
     # e-instruments Session Strings Pro 2 (keyswitches at C-1, see BASE_BY_PREFIX).
     # Nine keyswitch slots in a 3x3 grid, keys user-assignable per nki.
-    # Verified from Kontakt (Violins - Modern, Key Switch panel):
-    #   C-1 Sustain | C#-1 Staccato | D-1 Pizzicato | D#-1 Legato
-    # Slots 5-9 (E-1 ... G#-1) are empty in that nki. Layout for the other
-    # instruments (Violas/Celli/Basses/Ensemble) is assumed to match - verify.
+    #   C-1 Sustain | C#-1 Staccato | D-1 Pizzicato | D#-1 Legato | E-1 Tremolo
+    #   F-1 Spiccato | F#-1 Forte Piano | G-1 Trill Semi | G#-1 Cresc Fast
+    # Label spelling matches the Key Switch panel exactly ("Forte Piano",
+    # "Trill Semi", "Cresc Fast"), not NI's marketing list.
     "Session Strings Pro 2 - ": {
-        inst: ["Sustain", "Staccato", "Pizzicato", "Legato"]
+        inst: ["Sustain", "Staccato", "Pizzicato", "Legato", "Tremolo",
+               "Spiccato", "Forte Piano", "Trill Semi", "Cresc Fast"]
         for inst in ["Violins", "Violas", "Celli", "Basses", "Ensemble"]
     },
 }

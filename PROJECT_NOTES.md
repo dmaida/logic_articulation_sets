@@ -118,13 +118,22 @@ Exception — **Baritone Sax**: same 8 + a 9th keyswitch at G#-1 = `Non Vibrato`
 
 **e-instruments — Session Strings Pro 2** (base C-1 / MIDI 12)
 
-Verified from Kontakt for **Violins - Modern** (Key Switch panel, 3x3 grid):
-`C-1 Sustain · C#-1 Staccato · D-1 Pizzicato · D#-1 Legato` — slots 5–9
-(E-1 … G#-1) empty. Violas / Celli / Basses / Ensemble are generated with the
-same layout but are **not yet confirmed**; if one differs, give it its own list.
+Verified from Kontakt (Key Switch panel, 3x3 grid, all nine slots filled):
+`C-1 Sustain · C#-1 Staccato · D-1 Pizzicato · D#-1 Legato · E-1 Tremolo ·
+F-1 Spiccato · F#-1 Forte Piano · G-1 Trill Semi · G#-1 Cresc Fast`
+
+Labels match the panel exactly (`Forte Piano`, `Trill Semi`, `Cresc Fast`) rather
+than NI's marketing names (`FortePiano`, `Trill semitone`, `Crescendo fast`).
+Symbols: Staccato, Pizzicato, Staccatissimo (Spiccato), Marcatissimo (Forte
+Piano). Tremolo / Trill / Cresc have no valid Logic symbol, so they render plain.
+
+The library offers 26 articulations but only nine switchable slots per nki; the
+rest (variant crescendi, trills, slides, scoops, falls, Portamento, Glissando)
+are reachable only from the instrument's own menu. Documented in the generator
+as a deliberate choice, not an oversight.
 
 Note: the manual (p.19) shows `C-2` and only three slots — that screenshot is
-stale; the shipping instrument starts at C-1 and includes Legato.
+stale; the shipping instrument starts at C-1.
 
 ### ⏳ Not yet verified (still on placeholder default names)
 
