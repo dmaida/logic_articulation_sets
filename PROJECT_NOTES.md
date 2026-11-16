@@ -127,6 +127,12 @@ Exception — **Baritone Sax**: same 8 + a 9th keyswitch at G#-1 = `Non Vibrato`
 - **NI SE — Woodwind Solo** (base C0): Flute, Oboe, Clarinet, Bassoon,
   Contrabassoon, Saxophone, Woodwind Quintet
   — placeholder: Sustain · Sustain Vibrato · Legato · Staccato · Sforzando · Swell · Trill · Marcato
+- **e-instruments — Session Strings Pro 2** (base C-2 / MIDI 0): Violins, Violas,
+  Celli, Basses, Ensemble — only the three slots the manual documents are set
+  (C-2 Sustain · C#-2 Staccato · D-2 Pizzicato). The library has **nine**
+  keyswitch slots in a 3x3 grid and their contents/keys are user-assignable per
+  nki, so the remaining six must be read off the Key Switch panel in Kontakt
+  before they can be added.
 
 To verify: open each `.nki` in Kontakt, read the Articulation Slots menu
 top-to-bottom, edit the matching list in `LIBRARIES`, rerun `gen_artic.py`.

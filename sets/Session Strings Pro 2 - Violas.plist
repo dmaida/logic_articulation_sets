@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Articulations</key>
+	<array>
+			<dict>
+				<key>ArticulationID</key>
+				<integer>1</integer>
+				<key>ID</key>
+				<integer>1001</integer>
+				<key>Name</key>
+				<string>Sustain</string>
+				<key>Default</key>
+				<true/>
+				<key>Output</key>
+				<array>
+					<dict>
+						<key>MB1</key>
+						<integer>0</integer>
+						<key>Status</key>
+						<string>Note On</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>ArticulationID</key>
+				<integer>2</integer>
+				<key>ID</key>
+				<integer>1002</integer>
+				<key>Name</key>
+				<string>Staccato</string>
+				<key>Symbol</key>
+				<string>Staccato</string>
+				<key>Output</key>
+				<array>
+					<dict>
+						<key>MB1</key>
+						<integer>1</integer>
+						<key>Status</key>
+						<string>Note On</string>
+					</dict>
+				</array>
+			</dict>
+			<dict>
+				<key>ArticulationID</key>
+				<integer>3</integer>
+				<key>ID</key>
+				<integer>1003</integer>
+				<key>Name</key>
+				<string>Pizzicato</string>
+				<key>Symbol</key>
+				<string>Pizzicato</string>
+				<key>Output</key>
+				<array>
+					<dict>
+						<key>MB1</key>
+						<integer>2</integer>
+						<key>Status</key>
+						<string>Note On</string>
+					</dict>
+				</array>
+			</dict>
+	</array>
+	<key>InputMidiChannel</key>
+	<integer>-1</integer>
+	<key>Name</key>
+	<string>Session Strings Pro 2 - Violas.plist</string>
+	<key>OctaveOffset</key>
+	<integer>0</integer>
+	<key>Switches</key>
+	<array>
+			<dict>
+				<key>ID</key>
+				<integer>1001</integer>
+				<key>MB1</key>
+				<integer>0</integer>
+				<key>Mode</key>
+				<string>Permanently</string>
+				<key>Status</key>
+				<string>NoteOn</string>
+			</dict>
+			<dict>
+				<key>ID</key>
+				<integer>1002</integer>
+				<key>MB1</key>
+				<integer>1</integer>
+				<key>Mode</key>
+				<string>Permanently</string>
+				<key>Status</key>
+				<string>NoteOn</string>
+			</dict>
+			<dict>
+				<key>ID</key>
+				<integer>1003</integer>
+				<key>MB1</key>
+				<integer>2</integer>
+				<key>Mode</key>
+				<string>Permanently</string>
+				<key>Status</key>
+				<string>NoteOn</string>
+			</dict>
+	</array>
+	<key>SwitchingEnabled</key>
+	<true/>
+</dict>
+</plist>

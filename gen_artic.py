@@ -37,8 +37,10 @@ SWITCHING_ENABLED = True         # play/click a keyswitch to SELECT an articulat
 
 # Per-library override for the slot-1 keyswitch note (defaults to BASE = C0).
 # e-instruments Session Horns Pro puts its keyswitches at C-1 (MIDI 12).
+# e-instruments Session Strings Pro 2 puts them at C-2 (MIDI 0).
 BASE_BY_PREFIX = {
-    "Session Horns Pro - ": 12,  # C-1
+    "Session Horns Pro - ": 12,          # C-1
+    "Session Strings Pro 2 - ": 0,       # C-2
 }
 
 # --- notation symbols: only these strings are valid in Logic (from factory sets)
@@ -145,6 +147,16 @@ LIBRARIES = {
         "Baritone Sax": ["Non Vibrato", "Vibrato", "FoPiCre 2Beat", "Grace",
                          "Grace Vibrato", "Growl", "Staccato", "Rips",
                          "Non Vibrato"],
+    },
+    # e-instruments Session Strings Pro 2 (keyswitches at C-2, see BASE_BY_PREFIX).
+    # The library exposes NINE keyswitch slots in a 3x3 grid. Slot keys are
+    # user-assignable; the manual's screenshot (p.19) shows the first row filled:
+    #   C-2 Sustain | C#-2 Staccato | D-2 Pizzicato
+    # Slots 4-9 (D-2 ... G#-2) are assigned per nki and vary; add them here once
+    # read off the Key Switch panel in Kontakt.
+    "Session Strings Pro 2 - ": {
+        inst: ["Sustain", "Staccato", "Pizzicato"]
+        for inst in ["Violins", "Violas", "Celli", "Basses", "Ensemble"]
     },
 }
 
